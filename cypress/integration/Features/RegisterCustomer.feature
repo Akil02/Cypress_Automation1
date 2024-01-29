@@ -1,3 +1,4 @@
+@AccountCreation
 Feature: Account Creation for a new customer
 
 Scenario Outline: Creating Account 
@@ -10,5 +11,5 @@ Scenario Outline: Creating Account
    
 Examples:
         | Firstname    | Lastname | Email                     | Telephone  | Password      | Subscrbe |
-        | Akil         | Ganesh   | akilganesh64168@gamil.com | 9966337011 | Akilganesh9%  | Yes      |
+        | Akil         | Ganesh   | akilganesh00558@gamil.com | 9966337011 | Akilganesh9%  | Yes      |
 
