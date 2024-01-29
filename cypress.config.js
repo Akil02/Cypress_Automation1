@@ -28,7 +28,7 @@ module.exports = defineConfig({
       });
     },
     //  retries: 1,
-    specPattern: "cypress/integration/Features/*.feature",
+    specPattern: ["**/*.{feature,features}"],
     //specPattern: "cypress/Common/*.js",
   },
 });

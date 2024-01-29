@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open"
+    "test": "npx cypress open",
+    "Run_Desktopn": "npx cypress-tags run -e TAGS='@Excel' --headed"
   },
   "author": "",
   "license": "ISC",
