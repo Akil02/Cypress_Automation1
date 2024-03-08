@@ -9,7 +9,8 @@ const path = require("path");
 
 module.exports = defineConfig({
   env: {
-    Url: "https://naveenautomationlabs.com/opencart/",
+    Shopping_Url: "https://naveenautomationlabs.com/opencart/",
+    Banking_Url: "https://demo.guru99.com/V4/",
   },
   e2e: {
     setupNodeEvents(on, config) {

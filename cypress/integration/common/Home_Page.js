@@ -22,7 +22,7 @@ Given("user on the main page go to the Regiter page", () => {
 Given(
   "The user is on the main page login using credentials and click one desktop button",
   () => {
-    cy.visit(Cypress.env("Url"));
+    cy.visit(Cypress.env("Shopping_Url"));
     cy.wait(2000);
     cy.url().should("include", "https://naveenautomationlabs.com/opencart/");
     Main.MyAccount().click({ force: true });
