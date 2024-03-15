@@ -13,12 +13,16 @@
     "@cypress/xpath": "^2.0.3",
     "cypress": "^13.6.2",
     "cypress-xpath": "^2.0.1",
+    "mysql": "^2.18.1",
     "node-xlsx": "^0.23.0"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
   },
   "dependencies": {
-    "cypress-cucumber-preprocessor": "^4.3.1"
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "exceljs": "^4.4.0",
+    "mssql": "^10.0.2",
+    "xlsx": "^0.18.5"
   }
 }

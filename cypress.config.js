@@ -6,11 +6,20 @@ const { defineConfig } = require("cypress");
 const xlsx = require("node-xlsx").default;
 const fs = require("fs");
 const path = require("path");
+const { ConnectionPool } = require("mssql");
 
 module.exports = defineConfig({
   env: {
     Shopping_Url: "https://naveenautomationlabs.com/opencart/",
-    Banking_Url: "https://demo.guru99.com/V4/",
+    ShoppingAdmin_Url: "https://demo.opencart.com/admin/",
+    db: {
+      server: "localhost",
+      port: 1522,
+      SID: "xe",
+      user: "system",
+      password: "system",
+      database: "ORH",
+    },
   },
   e2e: {
     setupNodeEvents(on, config) {
@@ -25,6 +34,16 @@ module.exports = defineConfig({
               reject(e);
             }
           });
+        },
+        queryDb: async (query) => {
+          try {
+            const pool = await new ConnectionPool(config.env.db).connect();
+            const result = await pool.query(query);
+            await pool.close();
+            return result.recordset;
+          } catch (error) {
+            throw error;
+          }
         },
       });
     },
