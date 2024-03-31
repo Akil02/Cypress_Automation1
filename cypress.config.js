@@ -9,9 +9,12 @@ const path = require("path");
 const { ConnectionPool } = require("mssql");
 
 module.exports = defineConfig({
+  chromeWebSecurity: false,
+  experimentalModifyObstructiveThirdPartyCode: true,
   env: {
     Shopping_Url: "https://naveenautomationlabs.com/opencart/",
     ShoppingAdmin_Url: "https://demo.opencart.com/admin/",
+    RahulSheety_Url: "https://rahulshettyacademy.com/AutomationPractice/",
     db: {
       server: "localhost",
       port: 1522,

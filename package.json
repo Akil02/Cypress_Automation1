@@ -12,6 +12,7 @@
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
     "cypress": "^13.6.2",
+    "cypress-iframe": "^1.0.1",
     "cypress-xpath": "^2.0.1",
     "mysql": "^2.18.1",
     "node-xlsx": "^0.23.0"
