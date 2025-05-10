@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch:  
+  workflow_dispatch:
 
 jobs:
   cypress-run:
@@ -17,10 +17,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18  
+          node-version: 18
 
       - name: Install dependencies
-        run: npm install  
+        run: npm ci  # use npm ci for faster clean install
+
+      - name: Verify Cypress is installed and set up
+        run: npx cypress verify
 
       - name: Run Cypress tests
         run: npx cypress run
