@@ -25,5 +25,5 @@ jobs:
       - name: Verify Cypress is installed and set up
         run: npx cypress verify
 
-      - name: Run Cypress tests
-        run: npx cypress run
+      - name: Run Cypress tests in Chrome
+        run: npx cypress run --browser chrome
