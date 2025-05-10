@@ -11,5 +11,5 @@ Scenario Outline: Creating Account
    
 Examples:
         | Firstname    | Lastname | Email                     | Telephone  | Password      | Subscrbe |
-        | Akil         | Ganesh   | akilganesh00558@gamil.com | 9966337011 | Akilganesh9%  | Yes      |
+        | Akil         | Ganesh   | akilganesh@gamil.com | 9966337011 | Akilganesh9%  | Yes      |
 

@@ -20,11 +20,14 @@ var login_Password = "";
 When(
   "user enters the Register Page Enter the personal details {string} {string} {string} {string}",
   (Fname, Lname, mail, phone) => {
+    const uniqueId = Math.floor(10000 + Math.random() * 90000);
+    const [username, domain] = mail.split("@");
+    const modifiedEmail = `${username}+${uniqueId}@${domain}`;
     Register.Firstname().type(Fname);
     Register.Lastname().type(Lname);
-    Register.Gamil().type(mail);
+    Register.Gamil().type(modifiedEmail);
     Register.Telephone().type(phone);
-    login_mailid = mail;
+    login_mailid = modifiedEmail;
   }
 );
 
@@ -32,10 +35,12 @@ And("after enter the details for your password {string}", (pass) => {
   Register.Password().type(pass);
   Register.Confirm_Password().type(pass);
   login_Password = pass;
-  cy.writeFile("cypress/fixtures/config.json", "");
-  cy.writeFile("cypress/fixtures/config.json", {
-    Username: login_mailid,
-    Password: login_Password,
+  cy.log(login_mailid);
+  cy.log(login_Password);
+  cy.readFile("cypress/fixtures/config.json").then((config) => {
+    config.Username = login_mailid;
+    config.Password = login_Password;
+    cy.writeFile("cypress/fixtures/config.json", config);
   });
 });
 

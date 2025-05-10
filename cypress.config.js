@@ -52,6 +52,5 @@ module.exports = defineConfig({
     },
     //  retries: 1,
     specPattern: ["**/*.{feature,features}"],
-    //specPattern: "cypress/Common/*.js",
   },
 });
