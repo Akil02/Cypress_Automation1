@@ -5,6 +5,8 @@ on:
     branches:
       - master
   workflow_dispatch:
+  schedule:
+    - cron: '30 0 * * *'  # 6:00 AM IST every day
 
 jobs:
   cypress-run:
